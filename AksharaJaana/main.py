@@ -22,7 +22,7 @@ def ocr_engine(filename):
       os.mkdir(line_dir+'pdfout/')
     except:
       pass
-    files = glob.glob(listdir+'pdfout/*')
+    files = glob.glob(line_dir+'pdfout/*')
     for f in files:
         os.remove(f)
 
@@ -33,7 +33,7 @@ def ocr_engine(filename):
       pass
     try:
       for page,i in zip(pages,range(len(pages))):
-        page.save(listdir+'pdfout/out{0}.jpg'.format(i), 'JPEG')
+        page.save(line_dir+'pdfout/out{0}.jpg'.format(i), 'JPEG')
     except:
       pass
 
@@ -41,7 +41,7 @@ def ocr_engine(filename):
     line_dir = 'AksharaJaana/output/'
 
     try:
-        os.mkdir(listdir)
+        os.mkdir(line_dir)
     except:
         pass
 
@@ -59,11 +59,19 @@ def ocr_engine(filename):
     list_of_line_img= os.listdir(line_dir+'pdfout/')
 
     arr = utils.rearrange(list_of_line_img)
-    # print(arr)
-    [utils.Ocr_image('output/pdfout/'+f) for f in arr]
+
+    for f in arr:
+      try:
+        text+=utils.Ocr_image('AksharaJaana/output/pdfout/'+f)
+
+
+      except:
+        text = utils.Ocr_image('AksharaJaana/output/pdfout/'+f)
+
+      
+    return text
 
   else:
-
     utils.truncate_data()
-    utils.Ocr_image(filename)
-
+    text = utils.Ocr_image(filename)
+    return text
