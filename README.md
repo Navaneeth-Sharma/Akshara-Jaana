@@ -16,8 +16,7 @@ pip install numpy
 # Sample Code 
 
 ## Installing the AksharaJaana
-
-### pip install AksharaJaana
+*pip install AksharaJaana*
 
 
 
