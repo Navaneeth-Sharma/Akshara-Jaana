@@ -36,15 +36,19 @@ class utils:
         except Exception as e:
             print(e)
 
-    def write_as_html(self, text):
-        file = open('AksharaJaana/output/result.html','a')
+    def write_as_html(self, text,saving_path = 'AksharaJaana/output/result.html'):
+        file = open(saving_path,'a')
         file.write(text)
         file.close()
         return text
 
 
-    def write_as_RTF(self, text):
-        file = open('AksharaJaana/output/result.rtf','a')
+    def write_as_RTF(self, text,saving_path='AksharaJaana/output/result.rtf'):
+        try:
+            truncate_data(saving_path)
+        except:
+            pass    
+        file = open(saving_path,'a')
         file.write(text)
         file.close()
         return text
@@ -54,12 +58,12 @@ class utils:
         text = file.read()
         print(text)
 
-    def truncate_data(self):
+    def truncate_data(self,file_path="AksharaJaana/output/result.rtf"):
         try:
             file = open("AksharaJaana/output/result.html","r+")
             file. truncate(0)
             file. close()
-            file = open("AksharaJaana/output/result.rtf","r+")
+            file = open(file_path,"r+")
             file.truncate(0)
             file.close()
         except:
@@ -74,9 +78,7 @@ class utils:
         # Adding custom options
         custom_config = r'--oem 3 --psm 6'
         text = pytesseract.image_to_string(img, lang='kan',config=custom_config)
-        self.write_as_html(text)
-        self.write_as_RTF(text)
-        
+
         return text
 
 
@@ -135,11 +137,10 @@ class utils:
         # from utils import getIndexPositions,convt_to_list
 
         image = cv2.imread(file_name)
-        # if image
         gray = self.get_grayscale(image)
         # thresh = self.thresholding(gray)
         opening = self.opening1(gray)
-        opening = cv2.adaptiveThreshold(opening, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY , 51,11 )
+        opening = cv2.adaptiveThreshold(opening, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY , 81,11 )
         actual_image = opening.copy()
 
         opening = opening/255
@@ -267,7 +268,7 @@ class utils:
                         else:
                             continue
 
-                        # print(i)
+                
                         try:
                             import os
                             os.mkdir('AksharaJaana/output/OUT/')
@@ -327,14 +328,12 @@ class utils:
 
         files = self.rearrange(files)
         files1 = [self.rearrange(glob.glob(f+'/'+'*.jpg')) for f in files]
-        # files1 = self.flatten(files1)
-        # print(sublist)
-        # import itertools
-        # files1 = itertools.chain(*sublist)
-        # print(files1)
-        # files1 = files1[0]
-        # print(files1)
+
 
         for f in files1:
             for f1 in f:
-                self.convt_to_string(str(f1))
+
+                text1 = self.convt_to_string(str(f1))
+
+
+        return text1
