@@ -6,13 +6,13 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 
 # The Requirements 
 
-####OpenCV >= 3.2
+#### OpenCV >= 3.2
 >pip install opencv-python
 
-####Numpy 
+#### Numpy 
 >pip install numpy
 
-####pdf2image
+#### pdf2image
 >pip install pdf2image
 
 >pip install poppler
