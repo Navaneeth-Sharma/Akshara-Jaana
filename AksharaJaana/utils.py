@@ -54,13 +54,12 @@ class utils:
         return text
 
     def read_from_html(self):
-        file = open('AksharaJaana/output/result.html','r')
+        file = open('output/result.html','r')
         text = file.read()
-        print(text)
 
-    def truncate_data(self,file_path="AksharaJaana/output/result.rtf"):
+    def truncate_data(self,file_path="output/result.rtf"):
         try:
-            file = open("AksharaJaana/output/result.html","r+")
+            file = open("output/result.html","r+")
             file. truncate(0)
             file. close()
             file = open(file_path,"r+")
@@ -203,19 +202,19 @@ class utils:
                         img1 = actual_image[pos[i]:pos[i+1],:]
                         try:
                             import os
-                            os.mkdir('AksharaJaana/output/OUT_ROW_CROP/')
+                            os.mkdir('output/OUT_ROW_CROP/')
                         except:
                             pass
+                        cv2.imwrite('output/OUT_ROW_CROP/filenameR{0}.jpg'.format(i), img1)
 
-                        cv2.imwrite('AksharaJaana/output/OUT_ROW_CROP/filenameR{0}.jpg'.format(i), img1)
-                        
-                        
                     except:
                         pass
         else:
             img = actual_image
-            cv2.imwrite('AksharaJaana/output/OUT_ROW_CROP/filenameR0.jpg', img)
+            cv2.imwrite('output/OUT_ROW_CROP/filenameR0.jpg', img)
 
+    def remove_duplicate(self,x):
+      return list(dict.fromkeys(x))
 
     def COLUMN_CROP(self,actual_image,preprop_image, index):
         ''' For the Column crop'''
@@ -230,7 +229,7 @@ class utils:
         pos = []
         for i in range(len(positions)):
             try:
-                if positions[i+1]-positions[i]>38:
+                if positions[i+1]-positions[i]>8:
                     pos.append(positions[i])
                     pos.append(positions[i+1])
             except:
@@ -242,7 +241,7 @@ class utils:
         Pos = []
         for i in range(len(pos)):
             try:
-                if pos[i+1]-pos[i]>38:
+                if pos[i+1]-pos[i]>8:
                     Pos.append(pos[i])
                     Pos.append(pos[i+1])
             except:
@@ -254,38 +253,36 @@ class utils:
             pos = Pos
         else:
             pos = Pos
+        # print(pos)
+        pos = self.remove_duplicate(pos)
 
         if len(pos)>1:
             for i in range(len(pos)):
 
                 if i!=len(pos):
-
-
                     try:
-
-                        if actual_image[:,pos[i]:pos[i+1]].shape[1] > 300:
+                        if actual_image[:,pos[i]:pos[i+1]].shape[1] > 200:
                             img1 = actual_image[:,pos[i]:pos[i+1]]
-                        else:
-                            continue
+                            try:
+                                import os
+                                os.mkdir('output/OUT/')                             
+                            except:
+                                pass
+                            try:
+                                import os
+                                os.mkdir('output/OUT/'+str(index))
 
-                
-                        try:
-                            import os
-                            os.mkdir('AksharaJaana/output/OUT/')
-                        except:
-                            pass
-                        try:
-                            import os
-                            os.mkdir('AksharaJaana/output/OUT/'+str(index))
-                        except:
-                            pass
-                        cv2.imwrite('AksharaJaana/output/OUT/'+str(index)+'/filename_{0}.jpg'.format(i), img1)
-                        
+                            except:
+                                pass
+
+                            cv2.imwrite('output/OUT/'+str(index)+'/filename_{0}.jpg'.format(i), img1)  
                     except:
                         pass
+                else:
+                    pass
         else:
             img = actual_image
-            cv2.imwrite('AksharaJaana/output/OUT/filename0.jpg', img)
+            cv2.imwrite('output/OUT/filename0.jpg', img)                
 
     def rearrange(self,array_of_filenames):
         import re
@@ -307,8 +304,9 @@ class utils:
         import glob, os, shutil
 
         try:
-            [os.remove(f) for f in glob.glob('AksharaJaana/output/OUT_ROW_CROP'+'/'+'*')]
-            [shutil.rmtree(f) for f in glob.glob('AksharaJaana/output/OUT'+'/'+'*')]
+
+            [os.remove(f) for f in glob.glob('output/OUT_ROW_CROP'+'/'+'*')]
+            [shutil.rmtree(f) for f in glob.glob('output/OUT'+'/'+'*')]
 
         except:
             pass
@@ -318,22 +316,22 @@ class utils:
         self.ROW_CROP(actual_image, opening)
 
         import os,shutil,glob
-        files = glob.glob('AksharaJaana/output/OUT_ROW_CROP'+'/'+'*.jpg')
+
+        files = glob.glob('output/OUT_ROW_CROP'+'/'+'*.jpg')
 
         for i,f in enumerate(files):
             actual_image,opening = self.preprocessing(f)
             self.COLUMN_CROP(actual_image, opening,index=i)
 
-        files = glob.glob('AksharaJaana/output/OUT/'+'*')
-
+        files = glob.glob('output/OUT/'+'*')
         files = self.rearrange(files)
         files1 = [self.rearrange(glob.glob(f+'/'+'*.jpg')) for f in files]
 
-
         for f in files1:
             for f1 in f:
-
-                text1 = self.convt_to_string(str(f1))
-
+                try:
+                    text1 += self.convt_to_string(str(f1))
+                except:
+                    text1 = self.convt_to_string(str(f1))
 
         return text1
