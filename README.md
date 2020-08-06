@@ -12,6 +12,9 @@ pip install opencv-python
 Numpy 
 pip install numpy
 
+pdf2image
+pip install pdf2image
+pip install poppler
 
 # Sample Code 
 
