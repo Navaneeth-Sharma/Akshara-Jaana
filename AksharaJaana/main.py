@@ -5,18 +5,11 @@ except:
 	from AksharaJaana.utils import utils
 utils = utils()
 def ocr_engine(filename):
-  line_dir = 'AksharaJaana/output/'
-
   try:
-      line_dir = 'AksharaJaana/output/'
-      os.mkdir('AksharaJaana/output')
+    os.mkdir('output/')
   except:
-      pass
-
-  try:
-      os.mkdir(line_dir)
-  except:
-      pass
+    pass
+  line_dir = 'output/'
   if '.pdf' in filename:
     try:
       os.mkdir(line_dir+'pdfout/')
@@ -38,14 +31,15 @@ def ocr_engine(filename):
       pass
 
 
-    line_dir = 'AksharaJaana/output/'
+    line_dir = 'output/'
 
     try:
         os.mkdir(line_dir)
     except:
         pass
 
-    files = glob.glob(line_dir+'/'+'*.png')
+    files = glob.glob(line_dir+'*.png')
+    print(files)
 
     for f in files:
         try:
@@ -56,17 +50,18 @@ def ocr_engine(filename):
     utils.truncate_data()
 
     files = glob.glob(line_dir+'pdfout/*')
+
     list_of_line_img= os.listdir(line_dir+'pdfout/')
 
     arr = utils.rearrange(list_of_line_img)
 
     for f in arr:
       try:
-        text+=utils.Ocr_image('AksharaJaana/output/pdfout/'+f)
+        text+=utils.Ocr_image('output/pdfout/'+f)
 
 
       except:
-        text = utils.Ocr_image('AksharaJaana/output/pdfout/'+f)
+        text = utils.Ocr_image('output/pdfout/'+f)
 
       
     return text
