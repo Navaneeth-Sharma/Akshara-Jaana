@@ -6,13 +6,13 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 
 # The Requirements 
 
-python >= 3.6.9
-opencv-python >= 4.2.0.32
-numpy==1.18.4
-pdf2image==1.13.1
-pytesseract
-tesseract
-poppler
+**python >= 3.6.9**  <br />
+**opencv-python >= 4.2.0.32**  <br />
+**numpy==1.18.4**  <br />
+**pdf2image==1.13.1**   <br />
+**pytesseract**   <br />
+**tesseract**   <br />
+**poppler**   <br />
 
 # Details for installation
 --------------------------------------------------------------Ubuntu------------------------------------------------------------
