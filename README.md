@@ -6,6 +6,15 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 
 # The Requirements 
 
+python >= 3.6.9
+opencv-python >= 4.2.0.32
+numpy==1.18.4
+pdf2image==1.13.1
+pytesseract
+tesseract
+poppler
+
+# Details for installation
 --------------------------------------------------------------Ubuntu------------------------------------------------------------
 
 1. Installing tesseract-ocr in the sysytem
@@ -27,7 +36,7 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 ---> type->   pip install numpy==1.18.4 --> press enter
 ---> type->   pip install pdf2image==1.13.1 --> press enter
 ---> type->   pip install AksharaJaana==0.1.2.3 --> press enter
-
+---> type->   pip install pytesseract --> press enter
 
 
 ------------------------------------------------------------- Windows-----------------------------------------------------------
@@ -44,7 +53,7 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 	  2---> under System variables, look for and double-click on PATH, click on New,
 	  3---> then add C:\Program Files\Tesseract-OCR\, click OK.
 
----> if no manually add the folder tesseract-ocr to the Program Files in the C drive which must be present at the download section (after extraction) and follow the same procedure
+---> if no, manually add the folder tesseract-ocr to the Program Files in the C drive which must be present at the download section (after extraction) and follow the same procedure
 
 2. Installing poppler in the system
 ---> go to this page, http://blog.alivate.com.au/poppler-windows/
@@ -56,6 +65,7 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 	 1 ---> Click on the Windows start button, search for Edit the system environment variables, click on Environment Variables...,
 	 2 ---> under System variables, look for and double-click on PATH, click on New,
 	 3 ---> then add C:\Users\Program Files\poppler-0.68.0_x86\bin, click OK.
+---> if no, manually add the folder poppler-0.68.0_x86 to the Program Files in the C drive which must be present at the download section (after extraction) and follow the same procedure
 
 3. Installing python and pip in the system (If pip is not installed)
 ---> go to this page and download python (any version >= 3.6.9)
@@ -68,6 +78,7 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 ---> type->   pip install numpy==1.18.4 --> press enter
 ---> type->   pip install pdf2image==1.13.1 --> press enter
 ---> type->   pip install AksharaJaana==0.1.2.3 --> press enter
+---> type->   pip install pytesseract --> press enter
 
 5.  Rebbot the system before starting to use 
 
