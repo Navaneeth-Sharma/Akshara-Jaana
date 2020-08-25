@@ -59,12 +59,14 @@ def ocr_engine(filename):
       try:
         text+=utils.Ocr_image('output/pdfout/'+f)
 
-
       except:
         text = utils.Ocr_image('output/pdfout/'+f)
-
       
-    return text
+    
+    try:
+      return text
+    except:
+      pass
 
   else:
     utils.truncate_data()
