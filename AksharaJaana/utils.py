@@ -5,6 +5,8 @@
 import cv2
 import numpy as np
 from collections import Iterable
+import io
+
 class utils:
 
     def __init__(self):
@@ -48,9 +50,14 @@ class utils:
             truncate_data(saving_path)
         except:
             pass    
-        file = open(saving_path,'a')
-        file.write(text)
-        file.close()
+        try:
+            file = open(saving_path,'a')
+            file.write(text)
+            file.close()
+        except:
+            with io.open(saving_path, 'a', encoding='utf8') as f:
+                f.write(text)
+                f.close()
         return text
 
     def read_from_html(self):
@@ -76,7 +83,7 @@ class utils:
 
         # Adding custom options
         custom_config = r'--oem 3 --psm 6'
-        text = pytesseract.image_to_string(img, lang='kan',config=custom_config)
+        text = pytesseract.image_to_string(img, lang='kan+eng',config=custom_config)
 
         return text
 
@@ -140,7 +147,7 @@ class utils:
         # thresh = self.thresholding(gray)
         opening = self.opening1(gray)
         opening = cv2.adaptiveThreshold(opening, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY , 81,11 )
-        actual_image = opening.copy()
+        actual_image = image.copy()
 
         opening = opening/255
 
