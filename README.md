@@ -4,7 +4,7 @@ AksharaJaana is the package which uses tesseract ocr in backend to convert the k
 following sample code in ubuntu.The Special feature of this is it can separate columns in page
 
 
-# The Requirements ( Conda envirnment is prefered for the smooth use )
+# The Requirements (## Conda envirnment is prefered for the smooth use )
 
 **python >= 3.6.9**  <br />
 **opencv-python >= 4.2.0.32**  <br />
