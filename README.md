@@ -4,7 +4,7 @@ AksharaJaana is the package which uses tesseract ocr in backend to convert the k
 following sample code in ubuntu.The Special feature of this is it can separate columns in page
 
 
-# The Requirements 
+# The Requirements ( Conda envirnment is prefered for the smooth use )
 
 **python >= 3.6.9**  <br />
 **opencv-python >= 4.2.0.32**  <br />
@@ -14,7 +14,7 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 **tesseract**   <br />
 **poppler**   <br />
 
-# Details for installation
+# Details for installation (Complete installation including requirements) 
 --------------------------------------------------------------Ubuntu------------------------------------------------------------
 
 1. Installing tesseract-ocr in the sysytem
@@ -35,7 +35,7 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 ---> type->   pip install opencv-python==4.2.0.32 --> press enter
 ---> type->   pip install numpy==1.18.4 --> press enter
 ---> type->   pip install pdf2image==1.13.1 --> press enter
----> type->   pip install AksharaJaana==0.1.2.3 --> press enter
+---> type->   pip install AksharaJaana==0.1.2.9 --> press enter
 ---> type->   pip install pytesseract --> press enter
 
 
@@ -77,15 +77,15 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 ---> type->   pip install opencv-python==4.2.0.32 --> press enter
 ---> type->   pip install numpy==1.18.4 --> press enter
 ---> type->   pip install pdf2image==1.13.1 --> press enter
----> type->   pip install AksharaJaana==0.1.2.3 --> press enter
+---> type->   pip install AksharaJaana==0.1.2.9 --> press enter
 ---> type->   pip install pytesseract --> press enter
 
-5.  Rebbot the system before starting to use 
+5.  Reboot the system before starting to use 
 
 
 
 ## Python Script
-**Its in test.py** 
+**Its in test.py in Github Repo** 
 >import AksharaJaana.main as ak 
 
 >text = ak.ocr_engine('/home/navaneeth/Desktop/NandD/OCR_kannada/CamScanner 06-28-2020 12.12.10.pdf')
