@@ -35,9 +35,9 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 ---> type->   pip install opencv-python==4.2.0.32 --> press enter
 ---> type->   pip install numpy==1.18.4 --> press enter
 ---> type->   pip install pdf2image==1.13.1 --> press enter
----> type->   pip install AksharaJaana==0.1.2.9 --> press enter
+---> type->   pip install AksharaJaana==0.1.2.9 --> press enter(1)
 ---> type->   pip install pytesseract --> press enter
-
+or try running (1) and download requirements.txt from this and run pip install -r requirements.txt
 
 ------------------------------------------------------------- Windows-----------------------------------------------------------
 
