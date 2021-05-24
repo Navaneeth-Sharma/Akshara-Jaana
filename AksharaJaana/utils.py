@@ -83,7 +83,7 @@ class utils:
 
         # Adding custom options
         custom_config = r'--oem 3 --psm 6'
-        text = pytesseract.image_to_string(img, lang='kan+eng',config=custom_config)
+        text = pytesseract.image_to_string(img, lang='kan',config=custom_config)
 
         return text
 
@@ -260,7 +260,7 @@ class utils:
             pos = Pos
         else:
             pos = Pos
-        # print(pos)
+
         pos = self.remove_duplicate(pos)
 
         if len(pos)>1:
@@ -334,11 +334,15 @@ class utils:
         files = self.rearrange(files)
         files1 = [self.rearrange(glob.glob(f+'/'+'*.jpg')) for f in files]
 
+        text1 = ''
+        
         for f in files1:
             for f1 in f:
                 try:
                     text1 += self.convt_to_string(str(f1))
                 except:
                     text1 = self.convt_to_string(str(f1))
-
-        return text1
+        try:
+            return text1
+        except:
+            pass
