@@ -6,9 +6,9 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 
 ## The Requirements (Conda environment is prefered for the smooth use)
 
-&nbsp;&nbsp; - AksharaJaana (pip package), check out the latest version available
-&nbsp;&nbsp; - Tesseract 
-&nbsp;&nbsp; - poppler
+- AksharaJaana (pip package), check out the latest version available
+- Tesseract 
+- poppler
 
 ## Details for Installation (Complete installation including requirements) 
 ### Ubuntu
@@ -37,7 +37,7 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 - next after installation of that files. check if this folder is present C:\Program Files\Tesseract-OCR\ 
 - if yes, then search for follow below procedure
 - Add C:\Program Files\Tesseract-OCR\  to your system PATH by doing the following: 
-	  1. Click on the Windows start button, search for Edit the system environment variables, click on Environment Variables..., 
+--  Click on the Windows start button, search for Edit the system environment variables, click on Environment Variables..., 
 	  2. under System variables, look for and double-click on PATH, click on New,
 	  3. then add C:\Program Files\Tesseract-OCR\, click OK.
 
