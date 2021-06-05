@@ -4,28 +4,28 @@ AksharaJaana is the package which uses tesseract ocr in backend to convert the k
 following sample code in ubuntu.The Special feature of this is it can separate columns in page
 
 
-## The Requirements (Conda environment is prefered for the smooth use)
+## The Requirements *(Conda environment is prefered for the smooth use)*
 
 - AksharaJaana (pip package), check out the latest version available
 - Tesseract 
 - poppler
 
-## Details for Installation (Complete installation including requirements) 
+## Details for Installation *(Complete installation including requirements)*
 ### Ubuntu
-1. Installing tesseract-ocr in the sysytem
+1. **Installing tesseract-ocr in the system**
 - open terminal
 - sudo apt-get update -y 
 - sudo apt-get install -y tesseract-ocr 
 
-2. Installing poppler in the system
+2. **Installing poppler in the system**
 - open terminal
 - sudo apt-get install -y poppler-utils 
 
-3. Installing python and pip (if pip is not installed)
+3. **Installing python and pip (if pip is not installed)**
 - open terminal 
 - sudo apt install python==3.6.9
 
-4. Installing packages for AksharaJaana
+4. **Installing packages for AksharaJaana**
 - open terminal
 - pip install AksharaJaana
 
