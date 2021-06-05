@@ -6,9 +6,9 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 
 ## The Requirements (Conda environment is prefered for the smooth use)
 
-- AksharaJaana (pip package), check out the latest version available
-- Tesseract 
-- poppler
+&nbsp;&nbsp; - AksharaJaana (pip package), check out the latest version available
+&nbsp;&nbsp; - Tesseract 
+&nbsp;&nbsp; - poppler
 
 ## Details for Installation (Complete installation including requirements) 
 ### Ubuntu
