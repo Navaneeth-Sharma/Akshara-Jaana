@@ -38,9 +38,9 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 - next after installation of that files. check if this folder is present C:\Program Files\Tesseract-OCR\ 
 - if yes, then search for follow below procedure
 - Add C:\Program Files\Tesseract-OCR\  to your system PATH by doing the following: 
-> &nbsp;&nbsp;1. Click on the Windows start button, search for Edit the system environment variables, click on Environment Variables...,__
-> &nbsp;&nbsp;2. under System variables, look for and double-click on PATH, click on New,__
-> &nbsp;&nbsp;3. then add C:\Program Files\Tesseract-OCR\, click OK.__
+> &nbsp;&nbsp;1. Click on the Windows start button, search for Edit the system environment variables, click on Environment Variables <br />
+> &nbsp;&nbsp;2. under System variables, look for and double-click on PATH, click on New <br />
+> &nbsp;&nbsp;3. then add C:\Program Files\Tesseract-OCR\, click OK <br />
 
 - if no, manually add the folder tesseract-ocr to the Program Files in the C drive which must be present at the download section (after extraction) and follow the same procedure
 
