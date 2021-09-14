@@ -65,8 +65,8 @@ following sample code in ubuntu.The Special feature of this is it can separate c
 
 ### Python Script
 **Its in test.py in Github Repo** 
-'''py
-import AksharaJaana.main as ak 
-text = ak.ocr_engine("Your file Path") 
-print(text)
+'''
+>import AksharaJaana.main as ak 
+>text = ak.ocr_engine("Your file Path") 
+>print(text)
 '''
