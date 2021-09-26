@@ -1,7 +1,6 @@
 # AksharaJaana
 
-AksharaJaana is the package which uses tesseract ocr in backend to convert the kannada text to editable format.You can use
-following sample code in ubuntu.The Special feature of this is it can separate columns in page
+AksharaJaana is the package which uses tesseract ocr in backend to convert the kannada text to editable format.The Special feature of this is it can separate columns in page
 
 
 ## The Requirements 
