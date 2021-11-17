@@ -67,8 +67,8 @@ class utils:
     def truncate_data(self,file_path="output/result.rtf"):
         try:
             file = open("output/result.html","r+")
-            file. truncate(0)
-            file. close()
+            file.truncate(0)
+            file.close()
             file = open(file_path,"r+")
             file.truncate(0)
             file.close()
