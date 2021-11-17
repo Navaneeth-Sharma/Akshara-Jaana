@@ -47,7 +47,7 @@ class utils:
 
     def write_as_RTF(self, text,saving_path='AksharaJaana/output/result.rtf'):
         try:
-            truncate_data(saving_path)
+            self.truncate_data(saving_path)
         except:
             pass    
         try:
@@ -157,7 +157,7 @@ class utils:
     def flatten(self,A):
         rt = []
         for i in A:
-            if isinstance(i,list): rt.extend(flatten(i))
+            if isinstance(i,list): rt.extend(self.flatten(i))
             else: rt.append(i)
         return rt
 
