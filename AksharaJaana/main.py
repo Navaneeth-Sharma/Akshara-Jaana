@@ -9,12 +9,12 @@ utils = utils()
 
 def ocr_engine(filename):
   try:
-    os.mkdir('output/')
+    os.mkdir("output/")
   except:
     pass
-  line_dir = 'output/'
+  line_dir = "output/"
 
-  if '.pdf' in filename:
+  if ".pdf" in filename:
     try:
       f1 = open(filename)
       text = f1.read()
@@ -26,36 +26,36 @@ def ocr_engine(filename):
       pass
 
     try:
-      os.mkdir(line_dir + 'pdfout/')
+      os.mkdir(line_dir + "pdfout/")
     except:
       pass
-    files = glob.glob(line_dir + 'pdfout/*')
+    files = glob.glob(line_dir + "pdfout/*")
     for f in files:
         os.remove(f)
 
     try:
-      from pdf2image import pdfinfo_from_path,convert_from_path
+      from pdf2image import pdfinfo_from_path, convert_from_path
       info = pdfinfo_from_path(filename, userpw=None, poppler_path=None)
 
       maxPages = info["Pages"]
       for page in range(1, maxPages + 1, 20): 
-        pages = convert_from_path(filename, dpi=100, first_page=page, last_page=min(page+20-1,maxPages))
+        pages = convert_from_path(filename, dpi=100, first_page=page, last_page=min(page + 20 - 1,maxPages))
 
         for page1, i in zip(pages,range(len(pages))):
           print(i)
-          page1.save(line_dir+'pdfout/out{0}.jpg'.format(page+i), 'JPEG')
+          page1.save(line_dir + "pdfout/out{0}.jpg".format(page+i), "JPEG")
     except:
       pass
 
 
-    line_dir = 'output/'
+    line_dir = "output/"
 
     try:
         os.mkdir(line_dir)
     except:
         pass
 
-    files = glob.glob(line_dir + '*.png')
+    files = glob.glob(line_dir + "*.png")
            
     for f in files:
         try:
@@ -65,18 +65,18 @@ def ocr_engine(filename):
 
     utils.truncate_data()
 
-    files = glob.glob(line_dir + 'pdfout/*')
+    files = glob.glob(line_dir + "pdfout/*")
 
-    list_of_line_img= os.listdir(line_dir + 'pdfout/')
+    list_of_line_img= os.listdir(line_dir + "pdfout/")
 
     arr = utils.rearrange(list_of_line_img)
 
     for f in arr:
       try:
-        text += utils.Ocr_image('output/pdfout/' + f)
+        text += utils.Ocr_image("output/pdfout/" + f)
 
       except:
-        text = utils.Ocr_image('output/pdfout/' + f)
+        text = utils.Ocr_image("output/pdfout/" + f)
     
     try:
       return text
