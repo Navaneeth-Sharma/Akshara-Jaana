@@ -139,7 +139,7 @@ class utils:
 
 
     def preprocessing(self, file_name):
-        '''Before conveting the image to the pytesseract the image is fed to this preprocessing'''
+        '''Before converting the image to the pytesseract the image is fed to this preprocessing'''
         # from utils import getIndexPositions,convt_to_list
 
         image = cv2.imread(file_name)
