@@ -4,7 +4,7 @@
 
 import cv2
 import numpy as np
-from collections import Iterable
+from collections.abc import Iterable
 import io
 
 class utils:
