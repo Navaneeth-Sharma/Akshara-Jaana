@@ -2,12 +2,12 @@
 
 AksharaJaana is a package which uses tesseract ocr in the backend to convert the read-only kannada text to editable format.
 A Special feature of this is it can separate columns in the page and thus making it easier to read and edit.
-Do Conider use this  package if necessary and feel free to dm me for any clarifications 
+Do consider using this  package if necessary and feel free to dm me for any clarifications 
 my mail id is: navaneethsharma2310oct@gmail.com. Happy coding and installing 
 
 
 ## The Requirements 
-#### *Conda environment is prefered for the smooth use*
+#### *Conda environment is preferred for the smooth use*
 - AksharaJaana (pip package), check out the latest version available
 - Tesseract 
 - poppler
