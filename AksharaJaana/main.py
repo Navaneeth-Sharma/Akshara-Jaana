@@ -22,8 +22,9 @@ def ocr_engine(filename):
         pass
       else:
         return text
-    except:
-      pass
+    except FileNotFoundError:
+        print("There is no file named", filename)
+      
 
     try:
       os.mkdir(line_dir + "pdfout/")
