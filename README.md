@@ -3,8 +3,9 @@
 AksharaJaana is a package which uses tesseract ocr in the backend to convert the read-only kannada text to editable format.
 A Special feature of this is it can separate columns in the page and thus making it easier to read and edit.
 Do consider using this  package if necessary and feel free to dm me for any clarifications 
-my mail id is: navaneethsharma2310oct@gmail.com. Happy coding and installing 
+my twitter handle is: https://twitter.com/navaneethakbh . Happy coding and installing 
 
+To see the python package visit https://pypi.org/project/AksharaJaana/
 
 ## The Requirements 
 #### *Conda environment is preferred for the smooth use*
@@ -17,17 +18,22 @@ my mail id is: navaneethsharma2310oct@gmail.com. Happy coding and installing
 ### Ubuntu
 1. **Installing tesseract-ocr in the system**
 - open terminal
-- sudo apt-get update -y 
-- sudo apt-get install -y tesseract-ocr 
-
+```bash
+sudo apt-get update -y 
+sudo apt-get install -y tesseract-ocr 
+```
 2. **Installing poppler in the system**
-- sudo apt-get install -y poppler-utils 
-
+```bash 
+sudo apt-get install -y poppler-utils 
+```
 3. **Installing python and pip (if pip is not installed)** 
-- sudo apt install python==3.6.9
-
+```bash
+sudo apt install python==3.6.9
+```
 4. **Installing packages for AksharaJaana**
-- pip install AksharaJaana
+```bash
+pip install AksharaJaana
+```
 
 ### Windows
 1. Installing tesseract-ocr in the system 
@@ -67,8 +73,8 @@ my mail id is: navaneethsharma2310oct@gmail.com. Happy coding and installing
 
 ### Python Script
 **Its in test.py in Github Repo** 
-
->import AksharaJaana.main as ak <br>
->text = ak.ocr_engine("Your file Path") <br>
->print(text) <br>
-
+```python
+import AksharaJaana.main as ak 
+text = ak.ocr_engine("Your file Path") 
+print(text) 
+```
