@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="AksharaJaana", # Replace with your own username
-    version="0.1.2.4",
+    version="1.0.0.0",
     author="Navaneeth",
     author_email="navaneethsharma2310oct@gmail.com",
-    description="Kannada OCR with column Separation",
+    description="A Kannada OCR",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Navaneeth-Sharma/Akshara-Jaana/",
