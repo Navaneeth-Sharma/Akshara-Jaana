@@ -49,7 +49,7 @@ pip install AksharaJaana
 - if no, manually add the folder tesseract-ocr to the Program Files in the C drive which must be present at the download section (after extraction) and follow the same procedure
 
 2. Installing poppler in the system
-- go to <a href=" http://blog.alivate.com.au/poppler-windows/">this</a> page
+- go to <a href="http://blog.alivate.com.au/poppler-windows/">this</a> page
 - click on --> poppler-0.54_x86
 - after downloading open that file --> hit enter --> you will give an option to choose the languages. --> choose kannada in both script and lang
 - next after installation of that files. check if this folder is present C:\Program Files\Tesseract-OCR\ 
