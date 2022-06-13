@@ -4,8 +4,8 @@ AksharaJaana is a package which uses tesseract ocr in the backend to convert the
 A Special feature of this is it can separate columns in the page and thus making it easier to read and edit.
 Do consider using this  package if necessary and feel free to mail me for any clarifications.
 
-My Email : navaneethsharma2310oct@gmail.com
-My Twitter handle: https://twitter.com/navaneethakbh
+- Email : navaneethsharma2310oct@gmail.com
+- Twitter handle: https://twitter.com/navaneethakbh
 
 Happy coding and installing.
 
