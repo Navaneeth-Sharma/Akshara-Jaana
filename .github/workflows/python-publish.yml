@@ -22,17 +22,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install setuptools wheel twine
-    - name: Build a binary wheel and a source tarball
-      run: >-
-        python -m
-        build
-        --sdist
-        --wheel
-        --outdir dist/
     - name: Publish distribution 📦 to PyPI
-      if: startsWith(github.ref, 'refs/tags')
-      uses: pypa/gh-action-pypi-publish@master
+      run: |
+        python setup.py sdist bdist_wheel
+        twine upload dist/*
+    - name: Upload
       with:
+        username: "__token__"
         password: ${{ secrets.PYPI_PASSWORD }}
         
         
