@@ -27,8 +27,8 @@ def ocr_engine(filename):
           pass
         else:
           return text
-      except FileNotFoundError:
-          print("There is no file named", filename)
+      except Exception:
+          print("Cant decode!! The file is being read through Image..")
         
 
       try:
@@ -48,7 +48,7 @@ def ocr_engine(filename):
           pages = convert_from_path(filename, dpi=100, first_page=page, last_page=min(page + 20 - 1,maxPages))
 
           for page1, i in zip(pages,range(len(pages))):
-            print(i)
+            print("Reading Page No:", i+1)
             page1.save(line_dir + "pdfout/out{0}.jpg".format(page+i), "JPEG")
       except:
         pass
