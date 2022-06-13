@@ -1,5 +1,19 @@
 # AksharaJaana
 
+<p align="center">
+     <img src="https://user-images.githubusercontent.com/63489382/173416453-87824750-b79f-4213-b728-9e91405e541f.png" width=200px>
+</p>
+
+<p align="center">
+   An OCR for Kannada.
+</p>
+
+<p align="center">
+   <a href="https://www.npmjs.com/package/@swc/core">
+     <a href="https://pypi.org/project/AksharaJaana/"><img src="https://img.shields.io/badge/pypi-package-blue?labelColor=black&style=flat&logo=python&link=https://pypi.org/project/AksharaJaana/" alt="pypi" /></a>
+   </a>
+</p>
+
 AksharaJaana is a package which uses tesseract ocr in the backend to convert the read-only kannada text to editable format.
 A Special feature of this is it can separate columns in the page and thus making it easier to read and edit.
 Do consider using this  package if necessary and feel free to mail me for any clarifications.
