@@ -52,7 +52,7 @@ pip install AksharaJaana
 - go to <a href="http://blog.alivate.com.au/poppler-windows/">this</a> page
 - click on --> poppler-0.54_x86
 - after downloading open that file --> hit enter --> you will give an option to choose the languages. --> choose kannada in both script and lang
-- next after installation of that files. check if this folder is present C:\Program Files\Tesseract-OCR\ 
+- next after installation of that files. check if this folder is present C:\Users\Program Files\poppler-0.68.0_x86\bin
 - if yes, then search for follow below procedure
 - Add C:\Program Files\poppler-0.68.0_x86\bin to your system PATH by doing the following:
 > &nbsp;&nbsp;	 1. Click on the Windows start button, search for Edit the system environment variables, click on Environment Variables <br />
