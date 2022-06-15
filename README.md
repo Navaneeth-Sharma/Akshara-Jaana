@@ -1,7 +1,7 @@
 # AksharaJaana
 
 <p align="center">
-     <img src="https://user-images.githubusercontent.com/63489382/173416453-87824750-b79f-4213-b728-9e91405e541f.png" width=200px>
+     <img src="https://user-images.githubusercontent.com/63489382/173864136-118db121-fcf4-4c8a-9b7d-7c4e4c0e48f9.png" width=200px>
 </p>
 
 <p align="center">
