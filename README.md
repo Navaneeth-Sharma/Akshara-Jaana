@@ -61,7 +61,7 @@ Open terminal and execute below commands.
 4. **Installing packages for AksharaJaana**
 
    ```bash
-   pip install AksharaJaana
+   pip install --upgrade AksharaJaana
    ```
 
 ### Windows
