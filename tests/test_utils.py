@@ -1,16 +1,19 @@
 import unittest
 import cv2
 import numpy as np
+import sys
+import os
 
-import sys, os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'AksharaJaana')))
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "AksharaJaana"))
+)
 from utils import ImageOperationUtils, FileOperationUtils, Core
 
-class TestImageOperationUtils(unittest.TestCase):
 
+class TestImageOperationUtils(unittest.TestCase):
     def setUp(self):
         self.utils = ImageOperationUtils()
-        self.image = cv2.imread('imgs/test_image.jpeg')
+        self.image = cv2.imread("imgs/test_image.jpeg")
 
     def test_get_grayscale(self):
         grayscale = self.utils.get_grayscale(self.image)
@@ -29,7 +32,6 @@ class TestImageOperationUtils(unittest.TestCase):
 
 
 class TestFileOperationUtils(unittest.TestCase):
-
     def setUp(self):
         self.file_utils = FileOperationUtils()
         self.test_data = "Test data"
@@ -67,22 +69,22 @@ class TestFileOperationUtils(unittest.TestCase):
         with open(self.test_rtf_path, "w") as f:
             f.write("test")
         os.chmod(self.test_rtf_path, 0o444)  # make the file read-only
-        self.assertRaises(Exception, self.file_utils.save_as_rtf, self.test_data, self.test_rtf_path)
-
+        self.assertRaises(
+            Exception, self.file_utils.save_as_rtf, self.test_data, self.test_rtf_path
+        )
 
 
 class TestCore(unittest.TestCase):
     def setUp(self):
         self.core = Core()
-        self.test_image = 'imgs/test_image.jpeg'
-
+        self.test_image = "imgs/test_image.jpeg"
 
     def tearDown(self):
         self.core.clear_output_dirs()
 
     def test_image_to_string_pytesseract(self):
         text = self.core.image_to_string_pytesseract(self.test_image)
-        self.assertNotEqual(text.strip(), '')
+        self.assertNotEqual(text.strip(), "")
 
     def test_preprocessing(self):
         actual_image, preprocessed_image = self.core.preprocessing(self.test_image)
@@ -102,7 +104,7 @@ class TestCore(unittest.TestCase):
         actual_image, preprocessed_image = self.core.preprocessing(self.test_image)
         self.core.crop_images_by_row(actual_image, preprocessed_image)
         self.core.crop_images_by_column(actual_image, preprocessed_image, index=0)
-        output_folder = os.path.join(self.core.output_dir, '0')
+        output_folder = os.path.join(self.core.output_dir, "0")
         self.assertTrue(os.path.exists(output_folder))
         self.assertTrue(len(os.listdir(output_folder)) > 0)
 
@@ -115,10 +117,10 @@ class TestCore(unittest.TestCase):
 
     def test_get_text_from_image(self):
         text, columns, row = self.core.get_text_from_image(self.test_image)
-        self.assertNotEqual(text, '')
+        self.assertNotEqual(text, "")
         self.assertEqual(columns[0], 2)
         self.assertEqual(row, 1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

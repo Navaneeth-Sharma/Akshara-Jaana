@@ -73,7 +73,8 @@ class FileOperationUtils:
         try:
             with open(saving_path, "a", encoding="utf8") as file:
                 file.write(text)
-        except:
+        except Exception as e:
+            print(e)
             with io.open(saving_path, "a", encoding="utf8") as file:
                 file.write(text)
         finally:
@@ -200,11 +201,11 @@ class Core:
                     columns += 1
                     try:
                         os.makedirs(f"output/OUT/{index}")
-                    except:
+                    except FileExistsError:
                         pass
                     cv2.imwrite(f"output/OUT/{index}/filename_{i}.jpg", img1)
-            except:
-                pass
+            except Exception as e:
+                print(f"Error {e} Not able to write cropped column files")
 
         return columns
 
@@ -273,7 +274,8 @@ class Core:
             for image_file in image_files:
                 try:
                     text1 += self.image_to_string_pytesseract(str(image_file))
-                except:
+                except Exception as e:
+                    print(e)
                     text1 = self.image_to_string_pytesseract(str(image_file))
 
         return text1, columns_arr, rows

@@ -5,7 +5,7 @@ from warnings import warn
 
 try:
     from utils import Core
-except:
+except ImportError:
     from AksharaJaana.utils import Core
 
 
@@ -16,7 +16,8 @@ class OCREngine:
     def get_text_from_file(self, filename):
         if not exists(filename):
             warn(
-                "\033[93m The file in the given path doesn't exist. Please provide a valid path!"
+                """\033[93m The file in the given path doesn't exist. 
+                    Please provide a valid path!"""
             )
             return
 
@@ -52,8 +53,8 @@ class OCREngine:
                 for page1, i in zip(pages, range(len(pages))):
                     print("Reading Page No:", i + 1)
                     page1.save("output/pdfout/out{0}.jpg".format(page + i), "JPEG")
-        except:
-            pass
+        except Exception as e:
+            print(f"Exception {e} not able to read pdf properly")
 
         text = ""
 
@@ -64,7 +65,7 @@ class OCREngine:
             try:
                 text_, _, _ = self.core.get_text_from_image("output/pdfout/" + f)
                 text += text_
-            except:
-                pass
+            except Exception:
+                print(".")
 
         return text
