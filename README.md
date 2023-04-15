@@ -39,27 +39,14 @@ To see the python package visit https://pypi.org/project/AksharaJaana/
 
 Open terminal and execute below commands.
 
-1. **Installing tesseract-ocr in the system**
+1. **Install the requirements in your system**
 
      ```bash
      sudo apt-get update -y 
-     sudo apt-get install -y tesseract-ocr 
-     sudo apt-get install tesseract-ocr-kan
+     sudo apt-get install -y poppler-utils python3 tesseract-ocr tesseract-ocr-kan
      ```
 
-2. **Installing poppler in the system**
-
-   ```bash
-   sudo apt-get install -y poppler-utils 
-   ```
-
-3. **Installing python and pip (if pip is not installed)**
-
-   ```bash
-   sudo apt install python==3.6.9
-   ```
-
-4. **Installing packages for AksharaJaana**
+2. **Installing packages for AksharaJaana**
 
    ```bash
    pip install --upgrade AksharaJaana
