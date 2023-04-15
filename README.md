@@ -43,7 +43,7 @@ Open terminal and execute below commands.
 
      ```bash
      sudo apt-get update -y 
-     sudo apt-get install -y poppler-utils python3 tesseract-ocr tesseract-ocr-kan
+     sudo apt-get install -y poppler-utils python3 python3-venv tesseract-ocr tesseract-ocr-kan
      ```
 
 2. **Installing packages for AksharaJaana**
