@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Tesseract
-        uses: vshn/tesseract-ocr@v1
+        uses: tesseract-ocr/tesseract
       - name: Install dependencies
         run: |
           pip install ruff pytest
