@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="AksharaJaana", # Replace with your own username
-    version="0.2.0.1",
+    name="AksharaJaana",
+    version="0.2.1.0",
     author="Navaneeth",
     author_email="navaneethsharma2310oct@gmail.com",
     description="A Kannada OCR",
