@@ -44,6 +44,7 @@ Open terminal and execute below commands.
      ```bash
      sudo apt-get update -y 
      sudo apt-get install -y tesseract-ocr 
+     sudo apt-get install tesseract-ocr-kan
      ```
 
 2. **Installing poppler in the system**
@@ -110,7 +111,9 @@ Open terminal and execute below commands.
 ### Python Script
 
 ```python
-import AksharaJaana.main as ak 
-text = ak.ocr_engine("Your file Path") 
+from AksharaJaana.main as OCREngine
+
+ocr = OCREngine()
+text = ocr.get_text_from_file("Your file Path") 
 print(text) 
 ```
