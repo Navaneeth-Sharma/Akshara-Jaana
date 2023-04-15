@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="AksharaJaana",
-    version="0.2.1.0",
+    version="1.0.1.1",
     author="Navaneeth",
     author_email="navaneethsharma2310oct@gmail.com",
     description="A Kannada OCR",
