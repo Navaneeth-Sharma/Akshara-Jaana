@@ -1,4 +1,4 @@
 opencv-python==4.5.1.48
-numpy==1.22.0
+numpy==22.0.4
 pytesseract==0.3.4
 pdf2image==1.13.1
