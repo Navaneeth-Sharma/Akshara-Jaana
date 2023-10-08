@@ -98,9 +98,12 @@ Open terminal and execute below commands.
 ### Python Script
 
 ```python
-from AksharaJaana.main as OCREngine
+from AksharaJaana.main import OCREngine
+from AksharaJaana.utils import ModelTypes, FileOperationUtils
 
-ocr = OCREngine()
+ocr = OCREngine(modelType=ModelTypes.Easyocr)
+# choices are Paddleocr, Easyocr, Tesseract
+
 text = ocr.get_text_from_file("Your file Path") 
 print(text) 
 ```

@@ -7,7 +7,7 @@ import os
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "AksharaJaana"))
 )
-from utils import ImageOperationUtils, FileOperationUtils, Core
+from utils import ImageOperationUtils, FileOperationUtils, Core, ModelTypes
 
 
 class TestImageOperationUtils(unittest.TestCase):
@@ -76,7 +76,7 @@ class TestFileOperationUtils(unittest.TestCase):
 
 class TestCore(unittest.TestCase):
     def setUp(self):
-        self.core = Core()
+        self.core = Core(ModelTypes.Tesseract)
         self.test_image = "imgs/test_image.jpeg"
 
     def tearDown(self):
