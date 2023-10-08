@@ -10,8 +10,8 @@ except ImportError:
 
 
 class OCREngine:
-    def __init__(self):
-        self.core = Core()
+    def __init__(self, modelType):
+        self.core = Core(modelType=modelType)
 
     def get_text_from_file(self, filename):
         if not exists(filename):

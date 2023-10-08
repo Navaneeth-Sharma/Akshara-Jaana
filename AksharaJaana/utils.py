@@ -7,6 +7,8 @@ import shutil
 import glob
 import pytesseract
 import re
+import easyocr
+from paddleocr import PaddleOCR
 
 
 class ImageOperationUtils:
@@ -83,11 +85,26 @@ class FileOperationUtils:
         return text
 
 
+class ModelTypes:
+    Tesseract = "tessract"
+    Easyocr = "easyocr"
+    Paddleocr = "paddleocr"
+
+
+
 class Core:
-    def __init__(self) -> None:
+    def __init__(self, modelType) -> None:
         self.img_operations = ImageOperationUtils()
         self.output_row_crop_dir = "output/OUT_ROW_CROP"
         self.output_dir = "output/OUT"
+
+        self.modelType = modelType
+
+        if self.modelType == ModelTypes.Easyocr:
+            self.reader = easyocr.Reader(["kn", "en"])
+        
+        if self.modelType == ModelTypes.Paddleocr:
+            self.paddleocr = PaddleOCR(lang="ka")
 
     def image_to_string_pytesseract(self, file_path):
         img = cv2.imread(file_path)
@@ -97,6 +114,13 @@ class Core:
         text = pytesseract.image_to_string(img, lang="kan", config=custom_config)
 
         return text
+
+    def image_to_string_easyocr(self, filepath):
+        return ' '.join([pred[1] for pred in self.reader.readtext(filepath)])   
+
+    def image_to_string_paddleocr(self, filepath):
+        result = self.paddleocr.ocr(filepath)
+        return ' '.join([line[1][0] for line in result[0]])
 
     def preprocessing(self, file_name):
         """
@@ -273,9 +297,19 @@ class Core:
         for image_files in all_image_files_arr:
             for image_file in image_files:
                 try:
-                    text1 += self.image_to_string_pytesseract(str(image_file))
+                    if self.modelType == ModelTypes.Easyocr:
+                        text1 += " " + self.image_to_string_easyocr(str(image_file))
+                    elif self.modelType == ModelTypes.Paddleocr:
+                        text1 += " " + self.image_to_string_paddleocr(str(image_file))
+                    else:
+                        text1 += " " + self.image_to_string_pytesseract(str(image_file))
                 except Exception as e:
                     print(e)
-                    text1 = self.image_to_string_pytesseract(str(image_file))
+                    if self.modelType == ModelTypes.Easyocr:
+                        text1 = self.image_to_string_easyocr(str(image_file))
+                    elif self.modelType == ModelTypes.Paddleocr:
+                        text1 = self.image_to_string_paddleocr(str(image_file))
+                    else:
+                        text1 = self.image_to_string_pytesseract(str(image_file))
 
         return text1, columns_arr, rows
