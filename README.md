@@ -97,6 +97,8 @@ Open terminal and execute below commands.
 
 ### Python Script
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_e5C07eWyMFz28mtWTMLv-nWQOHMQOVC?usp=sharing)
+
 ```python
 from AksharaJaana.main import OCREngine
 from AksharaJaana.utils import ModelTypes, FileOperationUtils
